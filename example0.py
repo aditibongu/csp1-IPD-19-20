@@ -9,7 +9,7 @@
 team_name = 'E0'
 strategy_name = 'Collude'
 strategy_description = 'Always collude.'
-    
+import random
 def move(my_history, their_history, my_score, their_score):
     '''Make my move based on the history with this player.
     
@@ -22,5 +22,11 @@ def move(my_history, their_history, my_score, their_score):
     '''
     
     # This player always colludes.
-    return 'c'
+    if len(my_history)%3 == 0:
+      return 'b'
+    else:
+      if random.random()<0.3: 
+            return 'b'         
+        else:
+            return 'c'
     
