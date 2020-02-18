@@ -52,3 +52,10 @@ def move(my_history, their_history, my_score, their_score):
             return 'b'         
         else:
             return 'c'
+
+    if 'b' in their_history[1:11:2]:
+      return 'b'
+    elif 'b' in their_history[2:11:2]:
+      return 'b'
+    else:
+      return 'c'
