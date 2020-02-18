@@ -22,11 +22,5 @@ def move(my_history, their_history, my_score, their_score):
     '''
     
     # This player always colludes.
-    if len(my_history)%3 == 0:
-      return 'b'
-    else:
-      if random.random()<0.3: 
-            return 'b'         
-        else:
-            return 'c'
+    
     
