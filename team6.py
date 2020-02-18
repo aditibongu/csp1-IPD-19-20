@@ -40,7 +40,7 @@ def move(my_history, their_history, my_score, their_score):
                     (prior_round_them == recent_round_them):
                 return their_history[round]
         if my_history[-1]=='c' and their_history[-1]=='b':
-            if random.random()<0.9: 
+            if random.random()<0.4: 
                return 'c'         
             else:
                return 'b' 
