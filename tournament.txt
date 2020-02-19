@@ -15,19 +15,19 @@ Section 1 - Player vs. Player
 --------------------------------------------------------------------------------
 Each column shows pts//round earned against each other player:
              P0     P1     P2     P3
-vs. P0 :      0   -244   -371      0
-vs. P1 :   -255      0   -375   -377
+vs. P0 :      0   -248   -368      0
+vs. P1 :   -252      0   -375   -375
 vs. P2 :    -77    -75      0   -201
-vs. P3 :      0    -74   -196      0
-TOTAL  :   -332   -393   -942   -578
+vs. P3 :      0    -75   -198      0
+TOTAL  :   -329   -398   -941   -576
 --------------------------------------------------------------------------------
 Section 2 - Leaderboard
 --------------------------------------------------------------------------------
 Average points per round:
 Team name (P#):  Score      with strategy name
 E0        (P0):        -83 points with Collude                                 
-E1        (P1):        -99 points with Betray                                  
-E3        (P3):       -145 points with Collude but retaliate                   
+E1        (P1):       -100 points with Betray                                  
+E3        (P3):       -144 points with Collude but retaliate                   
 E2        (P2):       -236 points with Alternate                               
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
@@ -56,13 +56,12 @@ def move(my_history, their_history, my_score, their_score):
     '''
     
     # This player always colludes.
-    if 'b' in their_history[1:11:2]:
+    if 'b' in their_history[1:10:2]:
       return 'b'
-    elif 'b' in their_history[2:11:2]:
+    elif 'b' in their_history[0:10:2]:
       return 'b'
     else:
-      return 'c'
-    --------------------------------------------------------------------------------
+      return 'c'--------------------------------------------------------------------------------
 example1--------------------------------------------------------------------------------
 ####
 # Each team's file must define four tokens:
@@ -152,25 +151,22 @@ def move(my_history, their_history, my_score, their_score):
         return 'c' # otherwise collude.--------------------------------------------------------------------------------
 Section 3 - Game Data for Team E0
 --------------------------------------------------------------------------------
--255 pt//round: E0(P0) "Collude"
--244 pt//ound: E1(P1) "Betray"
-ccbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
-BBbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+-252 pt//round: E0(P0) "Collude"
+-248 pt//ound: E1(P1) "Betray"
+cbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+Bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
 
-bbbbbbbbbbbbbbbbbbbbbbbbbb
-bbbbbbbbbbbbbbbbbbbbbbbbbb
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
 
 --------------------------------------------------------------------------------
 -77 pt//round: E0(P0) "Collude"
--371 pt//ound: E2(P2) "Alternate"
+-368 pt//ound: E2(P2) "Alternate"
 CcBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBb
 CBcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcb
 
-BbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBb
-cbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcb
-
-BbBbBbBbBbBbBbBbBb
-cbcbcbcbcbcbcbcbcb
+BbBbBbBbBbBbBbBbBbBbB
+cbcbcbcbcbcbcbcbcbcbc
 
 --------------------------------------------------------------------------------
 0 pt//round: E0(P0) "Collude"
@@ -181,20 +177,20 @@ CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
 CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
 CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
 
-CCCCCCCCCCC
-CCCCCCCCCCC
+CCC
+CCC
 
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 Section 3 - Game Data for Team E1
 --------------------------------------------------------------------------------
--244 pt//round: E1(P1) "Betray"
--255 pt//ound: E0(P0) "Collude"
-BBbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
-ccbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+-248 pt//round: E1(P1) "Betray"
+-252 pt//ound: E0(P0) "Collude"
+Bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+cbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
 
-bbbbbbbbbbbbbbbbbbbbbbbbbb
-bbbbbbbbbbbbbbbbbbbbbbbbbb
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
 
 --------------------------------------------------------------------------------
 -75 pt//round: E1(P1) "Betray"
@@ -202,32 +198,32 @@ bbbbbbbbbbbbbbbbbbbbbbbbbb
 BbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBb
 cbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcb
 
-BbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBb
-cbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcb
+BbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBb
+cbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcb
 
 --------------------------------------------------------------------------------
--74 pt//round: E1(P1) "Betray"
--377 pt//ound: E3(P3) "Collude but retaliate"
+-75 pt//round: E1(P1) "Betray"
+-375 pt//ound: E3(P3) "Collude but retaliate"
 BbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBb
 cbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcb
 
-BbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbB
-cbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbc
+BbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBb
+cbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcb
+
+BbBbBbBbBbBbBbBbBbBbBb
+cbcbcbcbcbcbcbcbcbcbcb
 
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 Section 3 - Game Data for Team E2
 --------------------------------------------------------------------------------
--371 pt//round: E2(P2) "Alternate"
+-368 pt//round: E2(P2) "Alternate"
 -77 pt//ound: E0(P0) "Collude"
 CBcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcb
 CcBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBb
 
-cbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcb
-BbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBb
-
-cbcbcbcbcbcbcbcbcb
-BbBbBbBbBbBbBbBbBb
+cbcbcbcbcbcbcbcbcbcbc
+BbBbBbBbBbBbBbBbBbBbB
 
 --------------------------------------------------------------------------------
 -375 pt//round: E2(P2) "Alternate"
@@ -235,17 +231,20 @@ BbBbBbBbBbBbBbBbBb
 cbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcb
 BbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBb
 
-cbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcb
-BbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBb
+cbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcb
+BbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBb
 
 --------------------------------------------------------------------------------
--196 pt//round: E2(P2) "Alternate"
+-198 pt//round: E2(P2) "Alternate"
 -201 pt//ound: E3(P3) "Collude but retaliate"
 CBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcB
 CcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBc
 
-cBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcB
-BcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBc
+cBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcB
+BcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBc
+
+cBcBcBcBcBcBcBcBcBcB
+BcBcBcBcBcBcBcBcBcBc
 
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
@@ -259,25 +258,31 @@ CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
 CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
 CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
 
-CCCCCCCCCCC
-CCCCCCCCCCC
+CCC
+CCC
 
 --------------------------------------------------------------------------------
--377 pt//round: E3(P3) "Collude but retaliate"
--74 pt//ound: E1(P1) "Betray"
+-375 pt//round: E3(P3) "Collude but retaliate"
+-75 pt//ound: E1(P1) "Betray"
 cbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcb
 BbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBb
 
-cbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbc
-BbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbB
+cbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcb
+BbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBb
+
+cbcbcbcbcbcbcbcbcbcbcb
+BbBbBbBbBbBbBbBbBbBbBb
 
 --------------------------------------------------------------------------------
 -201 pt//round: E3(P3) "Collude but retaliate"
--196 pt//ound: E2(P2) "Alternate"
+-198 pt//ound: E2(P2) "Alternate"
 CcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBc
 CBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcB
 
-BcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBc
-cBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcB
+BcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBc
+cBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcB
+
+BcBcBcBcBcBcBcBcBcBc
+cBcBcBcBcBcBcBcBcBcB
 
 --------------------------------------------------------------------------------

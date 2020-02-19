@@ -28,9 +28,7 @@ def move(my_history, their_history, my_score, their_score):
     # Analyze my_history and their_history and/or my_score and their_score.
     # Decide whether to return 'c' or 'b'.
 
-    if len(my_history)==0:
-        return 'c'
-    else:
+    if:
         recent_round_them = their_history[-1]
         recent_round_me = my_history[-1]
         for round in range(len(my_history)-1):
@@ -40,10 +38,12 @@ def move(my_history, their_history, my_score, their_score):
                     (prior_round_them == recent_round_them):
                 return their_history[round]
         if my_history[-1]=='c' and their_history[-1]=='b':
-            if random.random()<0.4: 
-               return 'c'         
+            if 'b' in their_history[1:10:2]:
+                return 'b'
+            elif 'b' in their_history[0:10:2]:
+                return 'b'
             else:
-               return 'b' 
+                return 'c' 
 
     if len(my_history)%3 == 0:
         return 'b'
@@ -53,9 +53,9 @@ def move(my_history, their_history, my_score, their_score):
         else:
             return 'c'
 
-    if 'b' in their_history[1:11:2]:
+    if 'b' in their_history[1:10:2]:
       return 'b'
-    elif 'b' in their_history[2:11:2]:
+    elif 'b' in their_history[0:10:2]:
       return 'b'
     else:
       return 'c'
