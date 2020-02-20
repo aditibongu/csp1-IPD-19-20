@@ -7,8 +7,8 @@
 ####
 
 team_name = 'rangers' # Only 10 chars displayed.
-strategy_name = 'The name the team gives to this strategy'
-strategy_description = 'How does this strategy decide?'
+strategy_name = 'Choose a one that has bigger collude!'
+strategy_description = 'First, check all the rounds that the opponent chose from their history and count the numbers of collude and betrays. Based on the amount of them, choose the one that has bigger value. If the opponents made the same amount of collude and betrays, then it will radomly choose betray or collude'
 
 import random
     
@@ -27,35 +27,19 @@ def move(my_history, their_history, my_score, their_score):
     
     # Analyze my_history and their_history and/or my_score and their_score.
     # Decide whether to return 'c' or 'b'.
-
-    if:
-        recent_round_them = their_history[-1]
-        recent_round_me = my_history[-1]
-        for round in range(len(my_history)-1):
-            prior_round_them = their_history[round]
-            prior_round_me = my_history[round]
-            if (prior_round_me == recent_round_me) and \
-                    (prior_round_them == recent_round_them):
-                return their_history[round]
-        if my_history[-1]=='c' and their_history[-1]=='b':
-            if 'b' in their_history[1:10:2]:
-                return 'b'
-            elif 'b' in their_history[0:10:2]:
-                return 'b'
-            else:
-                return 'c' 
-
-    if len(my_history)%3 == 0:
-        return 'b'
-    else:
-        if random.random()<0.3: 
-            return 'b'         
-        else:
-            return 'c'
-
-    if 'b' in their_history[1:10:2]:
+    theirb = 0 
+    theirc = 0
+    actions = ['b', 'c']
+    for action in their_history:
+      if action == 'b':
+        theirb += 1
+      if action == 'c':
+       theirc += 1
+    if theirb > theirc:
       return 'b'
-    elif 'b' in their_history[0:10:2]:
-      return 'b'
+    elif theirb == theirc:
+      return random.choices(actions)
     else:
       return 'c'
+
+  
